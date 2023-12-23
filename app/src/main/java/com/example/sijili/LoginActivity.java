@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         editor.apply();
 
-                        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login successful. Token: " + token, Toast.LENGTH_SHORT).show();
                         if (roles.get(0).equals("client")) {
                             Intent intent = new Intent(LoginActivity.this, ClientHomeActivity.class);
                             startActivity(intent);

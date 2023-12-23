@@ -12,18 +12,42 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sijili.R;
+import com.example.sijili.RetrofitInterface;
 import com.example.sijili.requests.CommerceRequest;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sijili.RetrofitInterface;
+import com.example.sijili.R;
+import com.example.sijili.requests.CommerceRequest;
+import com.example.sijili.users.serveractivities.ServerManageRequestsActivity;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class CommerceRequestAdapter extends RecyclerView.Adapter<CommerceRequestAdapter.ViewHolder> {
 
     private List<CommerceRequest> commerceRequests;
+    private RetrofitInterface retrofitInterface;
 
     public CommerceRequestAdapter(List<CommerceRequest> commerceRequests) {
         this.commerceRequests = commerceRequests;
     }
-
+    public CommerceRequestAdapter(List<CommerceRequest> commerceRequests, RetrofitInterface retrofitInterface) {
+        this.commerceRequests = commerceRequests;
+        this.retrofitInterface = retrofitInterface;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,6 +77,12 @@ public class CommerceRequestAdapter extends RecyclerView.Adapter<CommerceRequest
         holder.refuseButton.setOnClickListener(v -> {
             // Handle refuse button click
             // You can perform the necessary action here
+            if (retrofitInterface != null) {
+                deleteCommerceRequest(request.getUserId());
+            } else {
+                Toast.makeText(v.getContext(), "RetrofitInterface is null", Toast.LENGTH_SHORT).show();
+            }
+
         });
         holder.rqInfosLayout.setOnClickListener(v -> {
             // Handle refuse button click
@@ -64,7 +94,25 @@ public class CommerceRequestAdapter extends RecyclerView.Adapter<CommerceRequest
     public int getItemCount() {
         return commerceRequests.size();
     }
+    private void deleteCommerceRequest(String requestId) {
+        Call<Void> call = retrofitInterface.deleteCommerceRequest(requestId);
 
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    // Handle successful deletion, if needed
+                } else {
+                    // Handle unsuccessful deletion
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                // Handle network errors or other failures
+            }
+        });
+    }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
         TextView activityTypeTextView;

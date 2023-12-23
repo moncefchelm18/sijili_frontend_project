@@ -9,7 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".users.ServerHomeActivity">
 
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -135,7 +134,7 @@
                     android:clickable="true"
                     android:contentDescription="follow request"
                     android:focusable="true"
-                    android:onClick="goToRequestProcess" />
+                    android:onClick="goToMessagesList" />
 
                 <!-- Button overlay to capture clicks -->
             </RelativeLayout>

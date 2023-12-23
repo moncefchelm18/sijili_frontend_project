@@ -119,6 +119,8 @@
     <string name="manage_request_btn">Manage requests</string>
     <string name="manage_messages_btn">Messages</string>
     <string name="request_list_txt">List of requests</string>
+    <string name="submit_button">Submit</string>
+    <string name="messages_list_txt">List of messages</string>
 
 
 </resources>
