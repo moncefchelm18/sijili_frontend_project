@@ -81,7 +81,11 @@
 
                     <TextView
                         style="@style/DataRowsHeaderStyle"
-                        android:text="Step" />
+                        android:text="Activity" />
+
+                    <TextView
+                        style="@style/DataRowsHeaderStyle"
+                        android:text="Company" />
 
                     <TextView
                         style="@style/DataRowsHeaderStyle"
@@ -89,33 +93,90 @@
 
                     <TextView
                         style="@style/DataRowsHeaderStyle"
-                        android:text="Date" />
+                        android:text="Pay" />
                 </TableRow>
 
                 <!-- Sample Data Rows (Add more rows as needed) -->
                 <TableRow
                     style="@style/DataRowsStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:onClick="goToRequestInfos">
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="1" />
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Meeting" />
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Pending" />
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="ABC Corp" />
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="2023-12-20" />
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Completed" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Yes" />
                 </TableRow>
+
+                <TableRow
+                    style="@style/DataRowsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="goToRequestInfos">
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Meeting" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="ABC Corp" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="In progress" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Yes" />
+                </TableRow>
+                <TableRow
+                    style="@style/DataRowsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="goToRequestInfos">
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Meeting" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="ABC Corp" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="Not payed" />
+
+                    <TextView
+                        style="@style/DataRowsStyle"
+                        android:gravity="center"
+                        android:text="No" />
+                </TableRow>
+
 
                 <!-- Add more data rows as needed -->
 

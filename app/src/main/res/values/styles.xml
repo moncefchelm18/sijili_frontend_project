@@ -93,12 +93,22 @@
         <item name="android:gravity">center</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
     </style>
+
     <!-- Style for Data Rows -->
     <style name="DataRowsStyle">
         <!-- Customize text color, alignment, etc., as needed -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">#000000</item>
+        <item name="android:layout_weight">1</item>
+        <!-- Add background color for alternating rows -->
+        <item name="android:background">#F2F2F2</item>
+        <!-- Add borders to cells -->
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <!-- strings.xml -->

@@ -37,4 +37,8 @@ public class ClientFollowRequestActivity extends AppCompatActivity {
         });
     }
 
+    public void goToRequestInfos(View view) {
+        Intent intent = new Intent(ClientFollowRequestActivity.this, ClientFollowRequestInfos.class);
+        startActivity(intent);
+    }
 }

@@ -5,4 +5,7 @@
     <color name="primary">#1E232C</color>
     <color name="secondary">#35C2C1</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="red">#AE0000</color>
+    <color name="dark_red">#6E0000</color>
+
 </resources>
